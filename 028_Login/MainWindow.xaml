@@ -15,19 +15,23 @@
                   Margin="20 20 20 10">
         <TextBlock Width="90" FontSize="18"                   
                    HorizontalAlignment="Right">Id:</TextBlock>
-        <TextBox FontSize="18" Width="180"></TextBox>
+        <TextBox x:Name="txtId" FontSize="18" Width="180"></TextBox>
       </StackPanel>
       <StackPanel Orientation="Horizontal"
                   Margin="20 20 20 10">
-        <TextBlock Width="90" FontSize="18"                   
+        <TextBlock Width="90" 
+                   FontSize="18"                   
                    HorizontalAlignment="Right">Password:</TextBlock>
-        <PasswordBox FontSize="18" Width="180"></PasswordBox>
+        <PasswordBox 
+          x:Name="txtPass" 
+          FontSize="18" 
+          Width="180"></PasswordBox>
       </StackPanel>
       <StackPanel Orientation="Horizontal"
                   Margin="20 20 20 10">
         <TextBlock Width="90" FontSize="18"                   
                    HorizontalAlignment="Right"></TextBlock>
-        <Button FontSize="18" Width="180">Login</Button>
+        <Button FontSize="18" Width="180" Click="Button_Click">Login</Button>
       </StackPanel>
     </StackPanel>
   </Grid>

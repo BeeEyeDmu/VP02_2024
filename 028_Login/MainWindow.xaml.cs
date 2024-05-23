@@ -24,5 +24,13 @@ namespace _028_Login
     {
       InitializeComponent();
     }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+      if (txtId.Text == "abcd" && txtPass.Password == "1234")
+        MessageBox.Show("Login 성공!");
+      else
+        MessageBox.Show("Login 실패!");
+    }
   }
 }
