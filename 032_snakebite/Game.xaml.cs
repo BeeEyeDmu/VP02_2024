@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
@@ -30,6 +24,7 @@ namespace _032_snakebite
     private Stopwatch sw = new Stopwatch();
     private string move = "";
     private int eaten = 0;
+    private SoundPlayer myPlayer;
     public Game()
     {
       InitializeComponent();
@@ -37,6 +32,8 @@ namespace _032_snakebite
       InitEgg();
       t.Interval = new TimeSpan(0, 0, 0, 0, 100); // 0.1초
       t.Tick += T_Tick;
+      myPlayer = new SoundPlayer();
+      myPlayer.SoundLocation = "../../Sounds/Windows Notify.wav";
     }
 
     private void T_Tick(object sender, EventArgs e)
@@ -56,7 +53,15 @@ namespace _032_snakebite
         snakes[0].Tag = new Point(q.X + unit, q.Y);
 
       DrawSnakes();
+      Swatch();
       EatEgg();
+    }
+
+    private void Swatch()
+    {
+      TimeSpan ts = sw.Elapsed;
+      time.Text = String.Format("Time = {0:00}:{1:00}.{2:00}",
+        ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
     }
 
     private void EatEgg()
@@ -66,10 +71,23 @@ namespace _032_snakebite
 
       if(pS.X == pE.X && pS.Y == pE.Y)
       {
+        myPlayer.Play();
         egg.Visibility = Visibility.Hidden;
         visibleCount++;
         snakes[visibleCount-1].Visibility = Visibility.Visible;
         score.Text = "Eggs = " + ++eaten;
+
+        if(visibleCount == 10)
+        {
+          t.Stop();
+          sw.Stop();
+          DrawSnakes();
+          TimeSpan ts = sw.Elapsed;
+          string s = String.Format("Time = {0:00}:{1:00}.{2:00}",
+        ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+          MessageBox.Show("Success!! \n" + s + " sec");
+          this.Close();
+        }
 
         // 새로운 알을 만들기
         int x = r.Next(1, 48);
