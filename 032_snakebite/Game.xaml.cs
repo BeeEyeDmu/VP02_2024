@@ -29,11 +29,66 @@ namespace _032_snakebite
     private DispatcherTimer t = new DispatcherTimer();  // Form에서 Timer
     private Stopwatch sw = new Stopwatch();
     private string move = "";
+    private int eaten = 0;
     public Game()
     {
       InitializeComponent();
       InitSnake();
       InitEgg();
+      t.Interval = new TimeSpan(0, 0, 0, 0, 100); // 0.1초
+      t.Tick += T_Tick;
+    }
+
+    private void T_Tick(object sender, EventArgs e)
+    {
+      for (int i = visibleCount; i > 0; i--)
+        snakes[i].Tag = (Point)snakes[i - 1].Tag;
+
+      Point q = (Point)snakes[0].Tag; // 뱀 머리 좌표
+
+      if (move == "U")
+        snakes[0].Tag = new Point(q.X, q.Y - unit);
+      else if (move == "D")
+        snakes[0].Tag = new Point(q.X, q.Y + unit);
+      else if (move == "L")
+        snakes[0].Tag = new Point(q.X - unit, q.Y);
+      else if (move == "R")
+        snakes[0].Tag = new Point(q.X + unit, q.Y);
+
+      DrawSnakes();
+      EatEgg();
+    }
+
+    private void EatEgg()
+    {
+      Point pS = (Point)snakes[0].Tag;
+      Point pE = (Point)egg.Tag;
+
+      if(pS.X == pE.X && pS.Y == pE.Y)
+      {
+        egg.Visibility = Visibility.Hidden;
+        visibleCount++;
+        snakes[visibleCount-1].Visibility = Visibility.Visible;
+        score.Text = "Eggs = " + ++eaten;
+
+        // 새로운 알을 만들기
+        int x = r.Next(1, 48);
+        int y = r.Next(1, 38);
+        egg.Tag = new Point(x * unit, y * unit);
+        egg.Visibility = Visibility.Visible;
+        Canvas.SetLeft(egg, x*unit);
+        Canvas.SetTop(egg, y*unit);
+      }
+    }
+
+    private void DrawSnakes()
+    {
+      for(int i=0; i<visibleCount; i++)
+      {
+        Point p = (Point)snakes[i].Tag;
+        Canvas.SetLeft(snakes[i], p.X);
+        Canvas.SetTop(snakes[i], p.Y);
+      }
     }
 
     private void InitSnake()
@@ -84,6 +139,7 @@ namespace _032_snakebite
 
     private void Window_KeyDown(object sender, KeyEventArgs e)
     {
+      // MessageBox.Show("KeyDown");
       t.Start();
       sw.Start();
       if (e.Key == Key.Left)
