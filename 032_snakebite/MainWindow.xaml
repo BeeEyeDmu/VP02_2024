@@ -1,0 +1,27 @@
+﻿<Window x:Class="_032_snakebite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_032_snakebite"
+        mc:Ignorable="d"
+        Title="SnakeBite" Height="400" Width="525">
+  <Grid>
+    <Image Source="Images/tulip.jpg" Stretch="Fill"/>
+    <TextBlock Margin="20 20 0 0">SnakeBite</TextBlock>
+    <TextBlock Margin="20 35 0 0">Eat 25 Eggs using Arrow Keys</TextBlock>
+    <TextBlock Margin="20 50 0 0">Press ESC to pause while playing</TextBlock>
+    <Button Width="100" Height="40" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            x:Name="btnPlay"
+            Margin="120 200 0 0" 
+            Click="btnPlay_Click">Play</Button>
+    <Button Width="100" Height="40" 
+            HorizontalAlignment="Left"
+            FontSize="20"
+            x:Name="btnQuit"
+            Margin="300,200,0,0"
+            Click="btnQuit_Click">Quit</Button>
+  </Grid>
+</Window>

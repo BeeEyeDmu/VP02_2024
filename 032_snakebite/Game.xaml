@@ -1,0 +1,21 @@
+﻿<Window x:Class="_032_snakebite.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_032_snakebite"
+        mc:Ignorable="d"
+        Title="SnakeBite" 
+        SizeToContent="WidthAndHeight" 
+        KeyDown="Window_KeyDown" >
+  <Grid Height="380" Width="480">
+    <Canvas x:Name="field" Background="LightSteelBlue">
+      <TextBlock x:Name="score" Text="Eggs = 0"
+                 Foreground="White" FontSize="14"
+                 Canvas.Left="200" Canvas.Top="20"/>
+      <TextBlock x:Name="time" Text="Time = 00:00:00"
+                 Foreground="White" FontSize="14"
+                 Canvas.Left="270" Canvas.Top="20"/>
+    </Canvas>
+  </Grid>
+</Window>
