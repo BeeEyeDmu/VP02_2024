@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "031_uniformGrid", "031_unif
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "032_snakebite", "032_snakebite\032_snakebite.csproj", "{89F104CD-45D8-4104-89A7-F3C088F79227}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "033_EIS", "033_EIS\033_EIS.csproj", "{B008817A-0D31-490F-8690-2FD3D6E3B41B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -461,6 +463,18 @@ Global
 		{89F104CD-45D8-4104-89A7-F3C088F79227}.Release|x64.Build.0 = Release|Any CPU
 		{89F104CD-45D8-4104-89A7-F3C088F79227}.Release|x86.ActiveCfg = Release|Any CPU
 		{89F104CD-45D8-4104-89A7-F3C088F79227}.Release|x86.Build.0 = Release|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Debug|x64.Build.0 = Debug|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Debug|x86.Build.0 = Debug|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Release|x64.ActiveCfg = Release|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Release|x64.Build.0 = Release|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Release|x86.ActiveCfg = Release|Any CPU
+		{B008817A-0D31-490F-8690-2FD3D6E3B41B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

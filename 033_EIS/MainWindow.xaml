@@ -1,0 +1,93 @@
+﻿<Window x:Class="_033_EIS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_033_EIS"
+        mc:Ignorable="d"
+        Title="EIS" Height="530" Width="850"
+        Background="AliceBlue">
+  <StackPanel Margin="20">
+    <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center"
+                Margin="0 0 0 10">
+      <Image Source="Images/mysql.png" 
+             Width="48" Height="48"></Image>
+      <TextBlock FontSize="30" Margin="20 0 0 0">Employee Information System 1.0</TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">사번: </TextBlock>
+          <TextBox x:Name="txtEid" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">이름:</TextBlock>
+          <TextBox x:Name="txtName" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">부서:</TextBlock>
+          <ComboBox x:Name="cbDept" Width="150">
+            <ComboBoxItem>개발팀</ComboBoxItem>
+            <ComboBoxItem>마케팅팀</ComboBoxItem>
+            <ComboBoxItem>기획팀</ComboBoxItem>
+            <ComboBoxItem>총무팀</ComboBoxItem>
+            <ComboBoxItem>해외사업팀</ComboBoxItem>
+          </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">직급:</TextBlock>
+          <ComboBox x:Name="cbPos" Width="150">
+            <ComboBoxItem>이사</ComboBoxItem>
+            <ComboBoxItem>부장</ComboBoxItem>
+            <ComboBoxItem>과장</ComboBoxItem>
+            <ComboBoxItem>팀장</ComboBoxItem>
+            <ComboBoxItem>대리</ComboBoxItem>
+            <ComboBoxItem>사원</ComboBoxItem>
+          </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">성별:</TextBlock>
+          <RadioButton x:Name="rbMale" Width="50">남</RadioButton>
+          <RadioButton x:Name="rbFemale" Width="50">여</RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">입사일:</TextBlock>
+          <DatePicker x:Name="dpEnter" Width="150"></DatePicker>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">퇴사일:</TextBlock>
+          <DatePicker x:Name="dpExit" Width="150"></DatePicker>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">연락처:</TextBlock>
+          <TextBox x:Name="txtContact" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+          <TextBlock Width="80">기타:</TextBlock>
+          <TextBox x:Name="txtComment" 
+                   Width="150" Height="80" 
+                   AcceptsReturn="True"
+                   AcceptsTab="True"
+                   TextWrapping="Wrap"
+                   VerticalScrollBarVisibility="Auto"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="5">
+          <Button x:Name="btnInsert" Width="80"
+                  Click="btnInsert_Click">Inert</Button>
+          <TextBlock Width="20"/>
+          <Button x:Name="btnUpdate" Width="80">Update</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="5">
+          <Button x:Name="btnDelete" Width="80">Delete</Button>
+          <TextBlock Width="20"/>
+          <Button x:Name="btnLoadData" Width="80">Load Data</Button>
+        </StackPanel>
+
+      </StackPanel>
+      <DataGrid x:Name="dataGrid" Margin="5" Width="540"></DataGrid>
+    </StackPanel>
+  </StackPanel>
+</Window>
