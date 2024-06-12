@@ -77,17 +77,20 @@
           <Button x:Name="btnInsert" Width="80"
                   Click="btnInsert_Click">Inert</Button>
           <TextBlock Width="20"/>
-          <Button x:Name="btnUpdate" Width="80">Update</Button>
+          <Button x:Name="btnUpdate" Width="80"
+                  Click="btnUpdate_Click">Update</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center" Margin="5">
           <Button x:Name="btnDelete" Width="80">Delete</Button>
           <TextBlock Width="20"/>
-          <Button x:Name="btnLoadData" Width="80">Load Data</Button>
+          <Button x:Name="btnLoadData" Width="80" 
+                  Click="btnLoadData_Click">Load Data</Button>
         </StackPanel>
 
       </StackPanel>
-      <DataGrid x:Name="dataGrid" Margin="5" Width="540"></DataGrid>
+      <DataGrid x:Name="dataGrid" Margin="5" Width="540"
+                SelectionChanged="dataGrid_SelectionChanged"></DataGrid>
     </StackPanel>
   </StackPanel>
 </Window>
