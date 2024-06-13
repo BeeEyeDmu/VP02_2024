@@ -48,7 +48,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="5">
           <TextBlock Width="80">성별:</TextBlock>
-          <RadioButton x:Name="rbMale" Width="50">남</RadioButton>
+          <RadioButton x:Name="rbMale" Width="50" Content="남"></RadioButton>
           <RadioButton x:Name="rbFemale" Width="50">여</RadioButton>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="5">
@@ -74,15 +74,15 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center" Margin="5">
-          <Button x:Name="btnInsert" Width="80"
-                  Click="btnInsert_Click">Inert</Button>
+          <Button x:Name="btnInsert" Width="80" Content="Insert"
+                  Click="btnInsert_Click"></Button>
           <TextBlock Width="20"/>
           <Button x:Name="btnUpdate" Width="80"
                   Click="btnUpdate_Click">Update</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center" Margin="5">
-          <Button x:Name="btnDelete" Width="80">Delete</Button>
+          <Button x:Name="btnDelete" Width="80" Click="btnDelete_Click">Delete</Button>
           <TextBlock Width="20"/>
           <Button x:Name="btnLoadData" Width="80" 
                   Click="btnLoadData_Click">Load Data</Button>

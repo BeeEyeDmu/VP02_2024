@@ -194,5 +194,28 @@ namespace _033_EIS
       InitControls();
       DisplayDataGrid();
     }
+
+    private void btnDelete_Click(object sender, RoutedEventArgs e)
+    {
+      conn.Open();
+
+      string sql = string.Format("DELETE FROM eis_table WHERE eid={0}",
+        txtEid.Text);
+
+      try
+      {
+        MySqlCommand cmd = new MySqlCommand(sql, conn);
+        if (cmd.ExecuteNonQuery() == 1)
+          MessageBox.Show("삭제 성공!");
+      }
+      catch( Exception ex) 
+      {
+        MessageBox.Show(ex.Message);
+      }
+
+      conn.Close();
+      InitControls();
+      DisplayDataGrid();
+    }
   }
 }
